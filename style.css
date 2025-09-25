@@ -189,7 +189,7 @@ body.dark-theme {
     background: linear-gradient(45deg,
             rgba(220, 53, 69, 0.1),
             rgba(0, 0, 0, 0.9),
-            rgba(0, 212, 255, 0.1)), url('/Images/hero-bg.png');
+            rgba(0, 212, 255, 0.1)), url('Images/hero-bg.png');
     /* https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80 */
     /* https://malfit.vercel.app/assets/images/hero-bg.png */
     background-size: cover;
@@ -2207,4 +2207,5 @@ html {
 .scroll-top:hover {
     background: var(--secondary-red);
     transform: translateY(-5px);
+
 }
