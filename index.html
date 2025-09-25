@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTREME BODY - Transform Your Body, Transform Your Life</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="Images/XB PNG.png" alt="XTREME BODY">
+            </a>
+            
+            <!-- Custom Hamburger Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Products/products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="theme-switcher" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Animated Background -->
+        <div class="hero-bg"></div>
+
+        <!-- Floating Orbs -->
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <div class="hero-tagline">UNLEASH YOUR POTENTIAL</div>
+                        
+                        <h1 class="hero-title">
+                            <div class="typewriter">TRANSFORM YOUR LIFE</div>
+                        </h1>
+                        
+                        <p class="hero-subtitle">
+                            Join XTREME BODY and experience the ultimate fitness revolution with expert guidance and cutting-edge equipment.
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#contact" class="morph-btn">
+                                <span>START YOUR JOURNEY</span>
+                            </a>
+                            <a href="#memberships" class="morph-btn">
+                                <span>EXPLORE PLANS</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pulse Ring -->
+        <div class="pulse-container">
+            <div class="pulse-ring" onclick="scrollToNext()">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <!-- Interactive Stats -->
+        <div class="interactive-stats d-none d-lg-block">
+            <div class="stat-card">
+                <span class="stat-number" id="members">0</span> 
+                <span class="stat-label">Active Members</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="trainers">0</span> 
+                <span class="stat-label">Expert Trainers</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number"><i class="fas fa-venus-mars"></i></span>
+                <span class="stat-label">Uni Sex | Different Timings</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About XTREME BODY</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <div class="branch-card">
+                        <div class="branch-image"><img src="https://lh3.googleusercontent.com/p/AF1QipM12xQnadNCaZGqmUq4tEuWU6RWf7bPQAdLg33E=s873-k-no" alt=""></div>
+                        <h4>Town</h4>
+                        <p>Our flagship location in the heart of the city features 5000 sq ft of premium fitness equipment, group class studios, and personalized training areas. Open 24/7 with climate-controlled environment.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-danger me-2"></i>24/7 Access</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Premium Equipment</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Group Classes</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Personal Training</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4" data-aos="fade-left">
+                    <div class="branch-card">
+                        <div class="branch-image"><img src="" alt=""></div>
+                        <h4>RR Nagar</h4>
+                        <p>Our luxury wellness center combines fitness with holistic health services. Features spa facilities, nutrition consultation, and specialized recovery areas for the complete wellness experience.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-danger me-2"></i>Spa Facilities</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Nutrition Consulting</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Recovery Zone</li>
+                            <li><i class="fas fa-check text-danger me-2"></i>Wellness Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Personal Training</h4>
+                        <p>One-on-one coaching with certified trainers to help you achieve your specific fitness goals faster and safer.</p>
+                        <div class="service-quote">
+                            "Your only limit is your mind. Push beyond what you think is possible."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Weight Training</h4>
+                        <p>Access to premium weight equipment and strength training programs designed for all fitness levels.</p>
+                        <div class="service-quote">
+                            "Strength doesn't come from what you can do. It comes from overcoming the things you thought you couldn't."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Cardio</h4>
+                        <p>State-of-the-art cardio equipment including treadmills, ellipticals, and bikes with entertainment systems.</p>
+                        <div class="service-quote">
+                            "Every mile begins with a single step. Every heartbeat is progress."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Body Transformation</h4>
+                        <p>High-energy dance fitness classes that combine Latin rhythms with easy-to-follow moves for a fun workout.</p>
+                        <div class="service-quote">
+                            "Dance like nobody's watching. Sweat like everybody's counting."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Protein Supplements</h4>
+                        <p>Peaceful yoga sessions in dedicated studios to improve flexibility, strength, and mental well-being.</p>
+                        <div class="service-quote">
+                            "Yoga is not about touching your toes. It's about what you learn on the way down."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="background-overlay"></div>
+                    <div class="service-logo">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Diet Consultation</h4>
+                        <p>Personalized nutrition plans and dietary guidance from certified nutritionists to complement your fitness journey.</p>
+                        <div class="service-quote">
+                            "You are what you eat. So eat something sweet... like success!"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+            <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="interior">Gym Interior</button>
+                <button class="filter-btn" data-filter="trainers">Trainers</button>
+                <button class="filter-btn" data-filter="clients">Clients</button>
+                <button class="filter-btn" data-filter="equipment">Equipment</button>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item" data-category="interior" data-title="Modern Gym Interior">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Modern Gym Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Modern Gym Interior</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="equipment" data-title="Premium Equipment">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Premium Equipment">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Premium Equipment</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="trainers" data-title="Professional Trainers">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professional Trainers">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Professional Trainers</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="clients" data-title="Happy Clients">
+                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Happy Clients">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Happy Clients</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="interior" data-title="Cardio Zone">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cardio Zone">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Cardio Zone</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="equipment" data-title="Weight Section">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Weight Section">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Weight Section</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="clients" data-title="Group Training">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Group Training">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Group Training</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="trainers" data-title="Personal Training">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Personal Training">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Personal Training</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <button class="prev">&#10094;</button>
+            <img id="modalImage" src="" alt="">
+            <button class="next">&#10095;</button>
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Members Say</h2>
+            
+            <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <!-- Slide 1 - Desktop: 3 cards, Tablet: 2 cards, Mobile: 1 card -->
+                    <div class="carousel-item active">
+                        <div class="row g-0">
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Sarah Johnson <br><span>Professional Bodybuilder</span></h2>
+                                                    <p>This gym completely transformed my fitness journey. The trainers are incredibly knowledgeable and supportive, helping me achieve goals I never thought possible. The community here is amazing!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Sarah Johnson">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/video (1).mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Mike Rodriguez <br><span>Fitness Enthusiast</span></h2>
+                                                    <p>I've been a member for two years now, and the results speak for themselves. The equipment is top-notch, and the atmosphere is always motivating. Best investment I've made for my health!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Mike Rodriguez">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 d-none d-lg-block">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Emily Chen <br><span>Marathon Runner</span></h2>
+                                                    <p>The personalized training programs here are exceptional. My coach helped me improve my marathon time significantly. The facility is always clean and well-maintained too!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Emily Chen">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-0">
+                            <div class="col-lg-4 col-md-6 col-12 d-md-none d-lg-block">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/video (1).mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Emily Chen <br><span>Marathon Runner</span></h2>
+                                                    <p>The personalized training programs here are exceptional. My coach helped me improve my marathon time significantly. The facility is always clean and well-maintained too!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Emily Chen">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>David Thompson <br><span>Personal Trainer</span></h2>
+                                                    <p>Working here has been incredible. The management truly cares about both staff and members. The facility is equipped with the latest technology and the community spirit is unmatched!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="David Thompson">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Lisa Anderson <br><span>Yoga Instructor</span></h2>
+                                                    <p>The variety of classes and flexibility in scheduling is amazing. I've been able to explore different fitness disciplines and found my passion for yoga. The instructors are world-class!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face" alt="Lisa Anderson">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <div class="row g-0">
+                            <div class="col-lg-4 col-md-6 col-12 d-md-none d-lg-block">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Lisa Anderson <br><span>Yoga Instructor</span></h2>
+                                                    <p>The variety of classes and flexibility in scheduling is amazing. I've been able to explore different fitness disciplines and found my passion for yoga. The instructors are world-class!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face" alt="Lisa Anderson">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Alex Foster <br><span>Crossfit Athlete</span></h2>
+                                                    <p>The intensity and variety of workouts here keep me challenged every day. The coaching staff pushes you to your limits while ensuring proper form and safety. Couldn't ask for more!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face" alt="Alex Foster">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-12 d-md-block d-lg-none">
+                                <div class="testimonial-slide">
+                                    <div class="card-container">
+                                        <div class="card">
+                                            <div class="box">
+                                                <div class="imgbx">
+                                                    <video src="/Images/intro-movie-1080.mp4" 
+                                                           type="video/mp4" autoplay loop muted playsinline></video>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <div class="content">
+                                                    <h2>Emily Chen <br><span>Marathon Runner</span></h2>
+                                                    <p>The personalized training programs here are exceptional. My coach helped me improve my marathon time significantly. The facility is always clean and well-maintained too!</p>
+                                                </div>
+                                            </div>
+                                            <div class="circle">
+                                                <div class="imgbx">
+                                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Emily Chen">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <div class="nav-arrows">
+                    <button class="nav-btn" id="prevBtn" onclick="previousSlide()" aria-label="Previous testimonials">‹</button>
+                    <button class="nav-btn" id="nextBtn" onclick="nextSlide()" aria-label="Next testimonials">›</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></span>
+                    <span class="dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></span>
+                    <span class="dot" onclick="goToSlide(2)" aria-label="Go to slide 3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('fitness-tips')">
+                    <div class="blog-image-container">
+                        <div class="blog-image">
+                            <!-- <i class="fas fa-dumbbell" style="font-size: 3rem; opacity: 0.8;"></i> -->
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="">
+                        </div>
+                        <div class="blog-category">Fitness</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 15, 2025</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                            <span><i class="far fa-user"></i> John Doe</span>
+                        </div>
+                        <h3 class="blog-title">10 Essential Fitness Tips for Beginners</h3>
+                        <p class="blog-excerpt">Starting your fitness journey can be overwhelming. Here are 10 essential tips to help you get started on the right track and maintain a healthy lifestyle...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Beginner</span>
+                            <span class="blog-tag">Health</span>
+                            <span class="blog-tag">Exercise</span>
+                        </div>
+                        <div class="blog-footer">
+                            <a href="#" class="read-more-btn">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('nutrition-guide')">
+                    <div class="blog-image-container">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);">
+                            <!-- <i class="fas fa-apple-alt" style="font-size: 3rem; opacity: 0.8;"></i> -->
+                            <img src="" alt="">
+                        </div>
+                        <div class="blog-category">Nutrition</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 10, 2025</span>
+                            <span><i class="far fa-clock"></i> 7 min read</span>
+                            <span><i class="far fa-user"></i> Sarah Wilson</span>
+                        </div>
+                        <h3 class="blog-title">The Ultimate Guide to Pre and Post Workout Nutrition</h3>
+                        <p class="blog-excerpt">What you eat before and after your workout can significantly impact your performance and recovery. Learn the best practices for optimal nutrition timing...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Nutrition</span>
+                            <span class="blog-tag">Recovery</span>
+                            <span class="blog-tag">Performance</span>
+                        </div>
+                        <div class="blog-footer">
+                            <a href="#" class="read-more-btn">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('home-workouts')">
+                    <div class="blog-image-container">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);">
+                            <i class="fas fa-home" style="font-size: 3rem; opacity: 0.8;"></i>
+                        </div>
+                        <div class="blog-category">Workouts</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 5, 2025</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                            <span><i class="far fa-user"></i> Mike Johnson</span>
+                        </div>
+                        <h3 class="blog-title">5 Effective Home Workouts You Can Do Anywhere</h3>
+                        <p class="blog-excerpt">Don't have time to hit the gym? No problem! These 5 effective home workouts will keep you fit and healthy wherever you are, requiring minimal equipment...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Home Workout</span>
+                            <span class="blog-tag">No Equipment</span>
+                            <span class="blog-tag">Quick</span>
+                        </div>
+                        <div class="blog-footer">
+                            <a href="#" class="read-more-btn">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modals -->
+    <div id="fitness-tips" class="blog-modal">
+        <div class="blog-model-content">
+            <div class="modal-header">
+                <div class="modal-image">
+                    <!-- <i class="fas fa-dumbbell" style="font-size: 4rem; opacity: 0.8;"></i> -->
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="">
+                </div>
+                <button class="modal-close" onclick="closeModal('fitness-tips')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h1 class="modal-title">10 Essential Fitness Tips for Beginners</h1>
+                <div class="modal-meta">
+                    <span><i class="far fa-calendar"></i> March 15, 2025</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                    <span><i class="far fa-user"></i> John Doe</span>
+                </div>
+                <div class="modal-text">
+                    <p>Starting your fitness journey can be overwhelming, but with the right approach, you can set yourself up for long-term success. Here are 10 essential tips every beginner should know:</p>
+                    
+                    <h3>1. Start Slow and Build Gradually</h3>
+                    <p>Don't try to do everything at once. Begin with 2-3 workout sessions per week and gradually increase the frequency and intensity as your body adapts.</p>
+                    
+                    <h3>2. Focus on Form Over Weight</h3>
+                    <p>Proper form is crucial to prevent injuries and maximize the effectiveness of your exercises. Master the basics before adding more weight or complexity.</p>
+                    
+                    <h3>3. Set Realistic Goals</h3>
+                    <p>Set SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) to keep yourself motivated and track your progress effectively.</p>
+                    
+                    <h3>4. Stay Consistent</h3>
+                    <p>Consistency is more important than perfection. It's better to work out moderately 3 times a week than intensely once a week.</p>
+                    
+                    <h3>5. Listen to Your Body</h3>
+                    <p>Rest when you need to rest. Recovery is just as important as the workout itself for muscle growth and overall health.</p>
+                    
+                    <p>Remember, fitness is a journey, not a destination. Be patient with yourself and celebrate small victories along the way!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nutrition-guide" class="blog-modal">
+        <div class="blog-model-content">
+            <div class="modal-header">
+                <div class="modal-image" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);">
+                    <i class="fas fa-apple-alt" style="font-size: 4rem; opacity: 0.8;"></i>
+                </div>
+                <button class="modal-close" onclick="closeModal('nutrition-guide')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h1 class="modal-title">The Ultimate Guide to Pre and Post Workout Nutrition</h1>
+                <div class="modal-meta">
+                    <span><i class="far fa-calendar"></i> March 10, 2025</span>
+                    <span><i class="far fa-clock"></i> 7 min read</span>
+                    <span><i class="far fa-user"></i> Sarah Wilson</span>
+                </div>
+                <div class="modal-text">
+                    <p>What you eat before and after your workout can significantly impact your performance, recovery, and results. This comprehensive guide will help you optimize your nutrition timing.</p>
+                    
+                    <h3>Pre-Workout Nutrition</h3>
+                    <p>Eating the right foods before your workout can provide the energy you need to perform at your best:</p>
+                    <ul>
+                        <li><strong>Timing:</strong> Eat 1-3 hours before working out</li>
+                        <li><strong>Carbohydrates:</strong> Focus on easily digestible carbs for quick energy</li>
+                        <li><strong>Protein:</strong> Include some protein to prevent muscle breakdown</li>
+                        <li><strong>Hydration:</strong> Drink 16-20 oz of water 2-3 hours before exercise</li>
+                    </ul>
+                    
+                    <h3>Post-Workout Nutrition</h3>
+                    <p>The post-workout meal is crucial for recovery and muscle building:</p>
+                    <ul>
+                        <li><strong>Timing:</strong> Eat within 30-60 minutes after your workout</li>
+                        <li><strong>Protein:</strong> 20-40g of high-quality protein for muscle repair</li>
+                        <li><strong>Carbohydrates:</strong> Replenish glycogen stores with complex carbs</li>
+                        <li><strong>Hydration:</strong> Replace fluids lost through sweat</li>
+                    </ul>
+                    
+                    <p>Remember, individual needs may vary based on your goals, body type, and workout intensity. Experiment to find what works best for you!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="home-workouts" class="blog-modal">
+        <div class="blog-model-content">
+            <div class="modal-header">
+                <div class="modal-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);">
+                    <i class="fas fa-home" style="font-size: 4rem; opacity: 0.8;"></i>
+                </div>
+                <button class="modal-close" onclick="closeModal('home-workouts')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h1 class="modal-title">5 Effective Home Workouts You Can Do Anywhere</h1>
+                <div class="modal-meta">
+                    <span><i class="far fa-calendar"></i> March 5, 2025</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                    <span><i class="far fa-user"></i> Mike Johnson</span>
+                </div>
+                <div class="modal-text">
+                    <p>Don't have time to hit the gym? No problem! These 5 effective home workouts will keep you fit and healthy wherever you are, requiring minimal to no equipment.</p>
+                    
+                    <h3>1. Bodyweight Circuit Training</h3>
+                    <p>Combine push-ups, squats, lunges, and planks in a circuit format. Perform each exercise for 45 seconds with 15 seconds rest between exercises.</p>
+                    
+                    <h3>2. High-Intensity Interval Training (HIIT)</h3>
+                    <p>Alternate between high-intensity exercises like burpees and mountain climbers with short rest periods for maximum calorie burn in minimal time.</p>
+                    
+                    <h3>3. Yoga Flow Sequence</h3>
+                    <p>Improve flexibility, strength, and mindfulness with a 20-30 minute yoga flow focusing on sun salutations and warrior poses.</p>
+                    
+                    <h3>4. Core Strengthening Routine</h3>
+                    <p>Target your abs and core with planks, bicycle crunches, Russian twists, and dead bugs for a strong, stable midsection.</p>
+                    
+                    <h3>5. Cardio Dance Workout</h3>
+                    <p>Put on your favorite music and dance for 20-30 minutes. It's fun, burns calories, and doesn't feel like traditional exercise!</p>
+                    
+                    <p>These workouts can be modified for any fitness level and don't require expensive equipment or gym memberships. Stay consistent and you'll see results!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ Section -->
+    <section id="faq" class="section ">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                    What are your operating hours?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our Downtown location is open 24/7 for members, while our Uptown Wellness Center operates from 5:00 AM to 11:00 PM daily. Staff assistance is available from 6:00 AM to 10:00 PM.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                    Do you offer trial memberships?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We offer a 7-day free trial membership for first-time visitors. This gives you full access to both locations, group classes, and basic facilities. Personal training sessions are available at a discounted rate during your trial.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    What should I bring for my first visit?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Bring comfortable workout clothes, athletic shoes, a water bottle, and a towel. We provide lockers and basic toiletries. Don't forget to bring a valid ID for registration and any medical information relevant to your fitness goals.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                    Do you have personal trainers?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We have certified personal trainers available at both locations. They specialize in various areas including weight loss, strength training, sports conditioning, and injury rehabilitation. You can book sessions individually or purchase packages at discounted rates.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                    Are there group fitness classes?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We offer a wide variety of group classes including Zumba, Yoga, HIIT, Pilates, Spinning, and Strength Training. Classes are included with your membership and run throughout the day. Check our schedule or mobile app for current class times.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form" data-aos="fade-up" data-aos-delay="100">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required id="userName">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required id="userEmail">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required id="userMessage"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send to WhatsApp</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt fa-2x text-danger mb-3"></i>
+                        <h5>Visit Us</h5>
+                        <p>Downtown: 123 Fitness Street<br>Uptown: 456 Wellness Avenue</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info">
+                        <i class="fas fa-phone fa-2x text-danger mb-3"></i>
+                        <h5>Call Us</h5>
+                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-info">
+                        <i class="fas fa-envelope fa-2x text-danger mb-3"></i>
+                        <h5>Email Us</h5>
+                        <p>info@xtremebody.com<br>support@xtremebody.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">
+                        <img src="Images/XB PNG.png" alt="XTREME BODY">
+                    </div>
+                    <p>Transform your body and mind at XTREME BODY. Join our community of fitness enthusiasts and achieve your health goals with our expert guidance.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Home</a></li>
+                        <li><a href="#about" class="text-white-50">About</a></li>
+                        <li><a href="#services" class="text-white-50">Services</a></li>
+                        <li><a href="#gallery" class="text-white-50">Gallery</a></li>
+                        <li><a href="#contact" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                     <h5>Opening Hours</h5>
+                    
+                    <!-- Branch 1 & 2 -->
+                    <div class="branch-title">Branch 1 & 2</div>
+                    <div class="timing-item">
+                        <span class="timing-day">Monday - Saturday</span>
+                        <span class="timing-hours">5AM-9AM & 4PM-9PM</span>
+                    </div>
+                    <div class="timing-item">
+                        <span class="timing-day">Sunday</span>
+                        <span class="timing-hours">Closed</span>
+                    </div>
+                    
+                    <!-- Branch 1 Sunday Hours -->
+                    <div class="branch-title">Branch 1 Only</div>
+                    <div class="timing-item">
+                        <span class="timing-day">Sunday</span>
+                        <span class="timing-hours">7AM-9AM & 7PM-9PM</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-white-50"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
+                        <li class="text-white-50"><i class="fas fa-envelope me-2"></i>info@xtremebody.com</li>
+                        <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>Downtown & Uptown</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-white-50">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-white-50 mb-0">&copy; 2025 XTREME BODY. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"> </script>
+</body>
+</html>
