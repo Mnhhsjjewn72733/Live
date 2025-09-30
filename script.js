@@ -209,83 +209,83 @@ document.querySelectorAll('.stat-card').forEach(card => {
         num.style.transform = 'scale(1)'; num.style.color = 'var(--neon-red)';
     });
 });
-       // Navbar scroll effects
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 100) { 
-                nav?.classList.add('scrolled'); 
-            } else { 
-                nav?.classList.remove('scrolled'); 
-            }
-        });
+// Navbar scroll effects
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        nav?.classList.add('scrolled');
+    } else {
+        nav?.classList.remove('scrolled');
+    }
+});
 
-        // Smooth anchor scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({ 
-                        top: target.offsetTop - 100, 
-                        behavior: 'smooth' 
-                    });
-                }
-                // Close mobile menu after click
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
-                }
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 100,
+                behavior: 'smooth'
             });
-        });
-
-        // Theme switcher with gym elements
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById('theme-icon');
-            const text = document.getElementById('theme-text');
-            
-            if (body.classList.contains('dark-theme')) {
-                body.classList.replace('dark-theme', 'light-theme');
-                icon.className = 'fas fa-weight-hanging gym-icon';
-                text.textContent = 'Dark Mode';
-            } else {
-                body.classList.replace('light-theme', 'dark-theme');
-                icon.className = 'fas fa-dumbbell gym-icon';
-                text.textContent = 'Light Mode';
-            }
         }
+        // Close mobile menu after click
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarToggler.click();
+        }
+    });
+});
 
-        // Close navbar when clicking outside
-        document.addEventListener('click', function(event) {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            const navbar = document.querySelector('.navbar');
-            
-            // Check if click is outside the navbar
-            if (!navbar.contains(event.target) && navbarCollapse.classList.contains('show')) {
-                navbarToggler.click();
-            }
-        });
+// Theme switcher with gym elements
+function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    const text = document.getElementById('theme-text');
 
-        // Enhanced hamburger animation
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            // Small delay to ensure Bootstrap has updated aria-expanded
-            setTimeout(() => {
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                this.classList.toggle('active', isExpanded);
-            }, 50);
-        });
+    if (body.classList.contains('dark-theme')) {
+        body.classList.replace('dark-theme', 'light-theme');
+        icon.className = 'fas fa-weight-hanging gym-icon';
+        text.textContent = 'Dark Mode';
+    } else {
+        body.classList.replace('light-theme', 'dark-theme');
+        icon.className = 'fas fa-dumbbell gym-icon';
+        text.textContent = 'Light Mode';
+    }
+}
 
-        // Prevent navbar close when clicking inside the menu
-        document.querySelector('.navbar-collapse').addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
+// Close navbar when clicking outside
+document.addEventListener('click', function (event) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbar = document.querySelector('.navbar');
 
-        // Add smooth transition to theme changes
-        document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.transition = 'all 0.3s ease';
-        });
+    // Check if click is outside the navbar
+    if (!navbar.contains(event.target) && navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+    }
+});
+
+// Enhanced hamburger animation
+document.querySelector('.navbar-toggler').addEventListener('click', function () {
+    // Small delay to ensure Bootstrap has updated aria-expanded
+    setTimeout(() => {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.classList.toggle('active', isExpanded);
+    }, 50);
+});
+
+// Prevent navbar close when clicking inside the menu
+document.querySelector('.navbar-collapse').addEventListener('click', function (event) {
+    event.stopPropagation();
+});
+
+// Add smooth transition to theme changes
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.style.transition = 'all 0.3s ease';
+});
 // // Gallery filter
 // document.addEventListener('DOMContentLoaded', () => {
 //     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -745,3 +745,82 @@ document.querySelectorAll('.service-card').forEach(card => {
 // document.querySelectorAll('.service-card').forEach(card => {
 //     observer.observe(card);
 // });
+
+
+// Membership logic
+let selectedCard = null;
+
+function setBilling(type) {
+    const buttons = document.querySelectorAll('.billing-option');
+    const prices = document.querySelectorAll('.plan-price');
+    const oldPrices = document.querySelectorAll('.old-price');
+    const periods = document.querySelectorAll('.plan-period');
+    const discountBadges = document.querySelectorAll('.discount-badge');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    prices.forEach((price, index) => {
+        const monthly = price.dataset.monthly;
+        const halfYearly = price.dataset.halfYearly;
+        const annual = price.dataset.annual;
+        const oldPrice = oldPrices[index];
+        const period = periods[index];
+        const badge = discountBadges[index];
+
+        if (type === 'half-yearly') {
+            // Show old price crossed out for half-yearly
+            if (oldPrice.dataset.halfYearly) {
+                oldPrice.textContent = oldPrice.dataset.halfYearly;
+                oldPrice.style.display = 'block';
+            }
+            price.textContent = `₹${halfYearly}`;
+            period.textContent = '/6 months';
+
+            // Show discount for non-student plans
+            if (!price.closest('.student')) {
+                badge.style.display = 'inline-block';
+                badge.textContent = 'Save 17%';
+            }
+        } else if (type === 'annual') {
+            // Show old price crossed out for annual
+            if (oldPrice.dataset.annual) {
+                oldPrice.textContent = oldPrice.dataset.annual;
+                oldPrice.style.display = 'block';
+            }
+            price.textContent = `₹${annual}`;
+            period.textContent = '/year';
+
+            // Show discount for non-student plans
+            if (!price.closest('.student')) {
+                badge.style.display = 'inline-block';
+                badge.textContent = 'Save 17%';
+            }
+        } else {
+            // Monthly - hide old price and discount
+            oldPrice.style.display = 'none';
+            price.textContent = `₹${monthly}`;
+            period.textContent = '/month';
+
+            // Hide discount badge for non-student plans
+            if (!price.closest('.student')) {
+                badge.style.display = 'none';
+            }
+        }
+
+        // Student plan always shows discount
+        if (price.closest('.student')) {
+            badge.style.display = 'inline-block';
+            badge.textContent = 'Student Discount 35%';
+        }
+    });
+}
+// Button interactions
+document.querySelectorAll('.plan-button').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const planName = this.closest('.pricing-card').querySelector('.plan-name').textContent;
+        window.open(`https://wa.me/6381389118?text=Hello XTREME BODY!%0APlan Name:${planName}%0AConfirm this plan`, '_blank');
+        // alert(`Great choice! You've selected the ${planName} plan.`);
+    });
+});

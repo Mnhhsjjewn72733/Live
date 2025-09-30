@@ -42,6 +42,9 @@
                         <a class="nav-link" href="#testimonials">Reviews</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#memberships">Membership</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="./Products/products.html">Products</a>
                     </li>
                     <li class="nav-item">
@@ -72,7 +75,7 @@
                         <div class="hero-tagline">UNLEASH YOUR POTENTIAL</div>
                         
                         <h1 class="hero-title">
-                            <div class="typewriter">YOU EARN YOUR </div>
+                            <div class="typewriter">YOU EARN YOUR BODY</div>
                         </h1>
                         
                         <p class="hero-subtitle">
@@ -586,6 +589,131 @@
                     <span class="dot active" onclick="goToSlide(0)" aria-label="Go to slide 1"></span>
                     <span class="dot" onclick="goToSlide(1)" aria-label="Go to slide 2"></span>
                     <span class="dot" onclick="goToSlide(2)" aria-label="Go to slide 3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership section -->
+    <section id="memberships" class="section" >
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="billing-toggle">
+                <button class="billing-option active" onclick="setBilling('monthly')">Monthly</button>
+                <button class="billing-option" onclick="setBilling('half-yearly')">Half Yearly</button>
+                <button class="billing-option" onclick="setBilling('annual')">Annual</button>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card basic" onclick="selectPlan(this)">
+                    <div class="card-header">
+                        BASIC PLAN
+                    </div>
+                    <div class="card-body">
+                        <h3 class="plan-name">Starter</h3>
+                        <div class="price-container">
+                            <div class="price-wrapper">
+                                <div class="old-price" data-monthly="" data-half-yearly="₹174" data-annual="₹348" style="display: none;"></div>
+                                <div class="plan-price" data-monthly="29" data-half-yearly="145" data-annual="290">₹29</div>
+                            </div>
+                            <div class="plan-period">/month</div>
+                            <div class="discount-badge" style="display: none;">Save 17%</div>
+                        </div>
+                        <ul class="features-list">
+                            <li>Access to gym equipment</li>
+                            <!-- <li>Locker room facilities</li> -->
+                            <li>Basic fitness assessment</li>
+                            <!-- <li>1 guest pass per month</li> -->
+                            <li class="unavailable">Personal training</li>
+                            <li class="unavailable">Group classes</li>
+                            <!-- <li class="unavailable">Nutrition guidance</li> -->
+                        </ul>
+                        <button class="plan-button">Get Started</button>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="pricing-card premium" onclick="selectPlan(this)">
+                    <div class="card-header">
+                        PREMIUM PLAN
+                    </div>
+                    <div class="card-body">
+                        <h3 class="plan-name">Professional</h3>
+                        <div class="price-container">
+                            <div class="price-wrapper">
+                                <div class="old-price" data-monthly="" data-half-yearly="₹354" data-annual="₹708" style="display: none;"></div>
+                                <div class="plan-price" data-monthly="59" data-half-yearly="295" data-annual="590">₹59</div>
+                            </div>
+                            <div class="plan-period">/month</div>
+                            <div class="discount-badge" style="display: none;">Save 17%</div>
+                        </div>
+                        <ul class="features-list">
+                            <li>Everything in Basic</li>
+                            <!-- <li>Unlimited group classes</li> -->
+                            <li>2 personal training sessions</li>
+                            <li>Nutrition consultation</li>
+                            <!-- <li>5 guest passes per month</li> -->
+                            <!-- <li>Priority booking</li> -->
+                            <li class="unavailable">24/7 access</li>
+                        </ul>
+                        <button class="plan-button">Choose Premium</button>
+                    </div>
+                </div>
+                
+                <!-- Elite Plan -->
+                <!-- <div class="pricing-card elite" onclick="selectPlan(this)">
+                    <div class="card-header">
+                        ELITE PLAN
+                    </div>
+                    <div class="card-body">
+                        <h3 class="plan-name">VIP</h3>
+                        <div class="price-container">
+                            <div class="price-wrapper">
+                                <div class="old-price" data-monthly="" data-half-yearly="₹594" data-annual="₹1188" style="display: none;"></div>
+                                <div class="plan-price" data-monthly="99" data-half-yearly="495" data-annual="990">₹99</div>
+                            </div>
+                            <div class="plan-period">/month</div>
+                            <div class="discount-badge" style="display: none;">Save 17%</div>
+                        </div>
+                        <ul class="features-list">
+                            <li>Everything in Premium</li>
+                            <li>24/7 gym access</li>
+                            <li>Unlimited personal training</li>
+                            <li>Premium spa services</li>
+                            <li>Unlimited guest passes</li>
+                            <li>Exclusive member events</li>
+                            <li>Concierge services</li>
+                        </ul>
+                        <button class="plan-button">Go Elite</button>
+                    </div>
+                </div> -->
+    
+                <!-- Student Plan -->
+                <div class="pricing-card student" onclick="selectPlan(this)">
+                    <div class="card-header">
+                        STUDENT PLAN
+                    </div>
+                    <div class="card-body">
+                        <h3 class="plan-name">Student</h3>
+                        <div class="price-container">
+                            <div class="price-wrapper">
+                                <div class="old-price" data-monthly="₹29" data-half-yearly="₹145" data-annual="₹290">₹29</div>
+                                <div class="plan-price" data-monthly="19" data-half-yearly="95" data-annual="190">₹19</div>
+                            </div>
+                            <div class="plan-period">/month</div>
+                            <div class="discount-badge">Student Discount 35%</div>
+                        </div>
+                        <ul class="features-list">
+                            <li>Access to gym equipment</li>
+                            <!-- <li>Basic fitness assessment</li> -->
+                            <li>Student ID verification required</li>
+                            <!-- <li>Flexible study hours access</li> -->
+                            <li class="unavailable">Personal training</li>
+                            <li class="unavailable">Group classes</li>
+                        </ul>
+                        <button class="plan-button">Student Special</button>
+                    </div>
                 </div>
             </div>
         </div>
