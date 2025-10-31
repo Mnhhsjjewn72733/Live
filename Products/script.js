@@ -21,7 +21,7 @@ const products = [
         category: "protein",
         price: 2800,
         images: [
-            "Live/Products/Images/images-removebg-preview.png",
+            "Images/images-removebg-preview.png",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -37,7 +37,7 @@ const products = [
         category: "accessories",
         price: 800,
         images: [
-            ".//Products/Images/adjustable_dumbells.png",
+            "Images/adjustable_dumbells.png",
             "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -496,6 +496,7 @@ window.addEventListener('scroll', () => {
         navbar.style.backdropFilter = 'blur(10px)';
     }
 });
+
 
 
 
