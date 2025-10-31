@@ -5,7 +5,7 @@ const products = [
         category: "protein",
         price: 2500,
         images: [
-            "/Products/Images/download__5_-removebg-preview.png",
+            "Live/Products/Images/download__5_-removebg-preview.png",
             "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -21,7 +21,7 @@ const products = [
         category: "protein",
         price: 2800,
         images: [
-            "./Products/Images/images-removebg-preview.png",
+            "Live/Products/Images/images-removebg-preview.png",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -496,6 +496,7 @@ window.addEventListener('scroll', () => {
         navbar.style.backdropFilter = 'blur(10px)';
     }
 });
+
 
 
 
