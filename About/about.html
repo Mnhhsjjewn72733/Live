@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PowerFit Gym</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/XTREME BODY PNG.png" alt="XTREME BODY">
+            </a>
+
+            <!-- Custom Hamburger Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button class="theme-switcher" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                alt="Founder" class="founder-image">
+            <h1 class="hero-title">Elite Fitness Gym</h1>
+            <p class="hero-subtitle">Transforming Lives Through Fitness Since 2010</p>
+        </div>
+        <div class="masked-shape"></div>
+    </section>
+
+    <!-- Diamond Layout Section -->
+    <section class="diamond-section" id="branches">
+        <div class="section-header">
+            <h2 class="section-title">Our <span class="highlight">Locations</span></h2>
+            <p class="section-subtitle">Three premium fitness destinations serving our community</p>
+        </div>
+
+        <div class="diamond-container">
+            <!-- SVG Connection Lines forming X -->
+            <svg class="diamond-lines" viewBox="0 0 1000 1000">
+                <!-- Top-left to Center -->
+                <line class="diamond-line" x1="200" y1="100" x2="500" y2="500" />
+                <!-- Top-right to Center -->
+                <line class="diamond-line" x1="800" y1="100" x2="500" y2="500" />
+                <!-- Bottom-left to Center -->
+                <line class="diamond-line" x1="200" y1="900" x2="500" y2="500" />
+                <!-- Bottom-right to Center -->
+                <line class="diamond-line" x1="800" y1="900" x2="500" y2="500" />
+            </svg>
+
+            <!-- Center Hub with Logo -->
+            <div class="center-hub">
+                <div class="center-hub-img">
+                    <img src="assets/X Png2.png" alt="">
+                </div>
+            </div>
+
+            <!-- Top Left Node - Branch 1 -->
+            <a href="#branch1" style="text-decoration: none; color: inherit;">
+                <div class="branch-node node-top-left">
+                    <div class="node-circle">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="node-label">
+                        <h4>Rajapalayam</h4>
+                        <p>Join Now...</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Top Right Node - Branch 2 -->
+            <a href="#branch2" style="text-decoration: none; color: inherit;">
+                <div class="branch-node node-top-right">
+                    <div class="node-circle">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="node-label">
+                        <h4>RR Nagar</h4>
+                        <p>Join Now...</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Bottom Left Node - Branch 3 -->
+            <a href="#branch3" style="text-decoration: none; color: inherit;">
+                <div class="branch-node node-bottom-left">
+                    <div class="node-circle">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="node-label">
+                        <h4>Dhalavaipuram</h4>
+                        <p>Join Now...</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Bottom Right Node - Franchise (Coming Soon) -->
+            <div class="branch-node node-bottom-right" style="cursor: not-allowed;">
+                <div class="node-circle">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="node-label">
+                    <h4>Franchise Opportunity</h4>
+                    <p>Opening Soon...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Branch Information -->
+    <section class="details-section">
+        <div class="details-grid">
+            <!-- Downtown Branch -->
+            <div class="detail-card" id="branch1">
+                <div class="detail-info">
+                    <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Location 01</span>
+                    <h3>Rajapalayam</h3>
+                    <p>Located in the bustling downtown area, our flagship location offers the ultimate fitness
+                        experience with cutting-edge equipment and premium amenities designed for serious fitness
+                        enthusiasts.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-expand"></i>
+                            <span>5,000 sq ft space</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Latest Technogym</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-fire"></i>
+                            <span>CrossFit area</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-spa"></i>
+                            <span>Luxury sauna</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cloud-sun"></i>
+                            <span>Rooftop yoga</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Personal training</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-contact">
+                        <p><i class="fas fa-location-dot"></i> FH45+4JF, opposite Adhrith Hospital, behind Seeni Mahal, Rajapalayam, Tamil Nadu 626117</p>
+                        <p><i class="fas fa-phone"></i>90422 95854</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 5AM-9AM |  4PM-9PM  <br> Sun: 7AM-9AM</p>
+                    </div>
+
+                    <div class="detail-actions">
+                        <button class="action-btn primary">Get Free Trial</button>
+                        <button class="action-btn secondary">Virtual Tour</button>
+                    </div>
+                </div>
+
+                <div class="detail-visuals">
+                    <div class="detail-images">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Downtown Gym" class="detail-img main">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Equipment" class="detail-img">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Training" class="detail-img">
+                    </div>
+                    <div class="detail-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113991.08072931747!2d77.39474118682799!3d9.387774081919515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e9b5cd51bd1f%3A0xa9dbdb7d9523551e!2sXTREME%20BODY%20HEALTH%20AND%20FITNESS!5e1!3m2!1sen!2sin!4v1763523385485!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Westside Branch -->
+            <div class="detail-card" id="branch2">
+                <div class="detail-info">
+                    <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Location 02</span>
+                    <h3>RR Nagar</h3>
+                    <p>Our Westside location focuses on creating a welcoming environment for families and fitness
+                        enthusiasts of all levels in a spacious, modern facility with amenities for everyone.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-child"></i>
+                            <span>Kids play area</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-swimming-pool"></i>
+                            <span>Swimming pool</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-people-group"></i>
+                            <span>Group classes</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mug-hot"></i>
+                            <span>Healthy cafe</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Senior friendly</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Community events</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-contact">
+                        <p><i class="fas fa-location-dot"></i> Ramaswamy Raja Nagar, Rajapalayam, Tamil Nadu 626108</p>
+                        <p><i class="fas fa-phone"></i> 94868 11714</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 5AM-9AM |  4PM-9PM  <br> Sun: Closed</p>
+                    </div>
+
+                    <div class="detail-actions">
+                        <button class="action-btn primary">Get Free Trial</button>
+                        <button class="action-btn secondary">Virtual Tour</button>
+                    </div>
+                </div>
+
+                <div class="detail-visuals">
+                    <div class="detail-images">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Westside Gym" class="detail-img main">
+                        <img src="https://images.unsplash.com/photo-1544216717-3bbf52512659?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Classes" class="detail-img">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Pool" class="detail-img">
+                    </div>
+                    <div class="detail-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56986.05158792203!2d77.5425039826533!3d9.445294838751673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06c39d40c99b95%3A0xc1250eb9e6efe1e1!2sXTREME%20BODY%20HEALTH%20AND%20FITNESS!5e1!3m2!1sen!2sin!4v1763394201304!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Eastpoint Branch -->
+            <div class="detail-card" id="branch3">
+                <div class="detail-info">
+                    <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Location 03</span>
+                    <h3>Dhalavaipuram</h3>
+                    <p>Our newest location specializes in high-performance training, sports conditioning, and recovery
+                        services for athletes and fitness enthusiasts seeking peak performance and results.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-weight-hanging"></i>
+                            <span>Olympic platforms</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Performance lab</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Cryo therapy</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hands"></i>
+                            <span>Athletic massage</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-gauge-high"></i>
+                            <span>Athlete monitoring</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-apple-whole"></i>
+                            <span>Sports nutrition</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-contact">
+                        <p><i class="fas fa-location-dot"></i> 9FQV+2VC Jayasakthi Nagar, Chettiarpatti, Dhalavaipuram, Tamil Nadu 626122 </p>
+                        <p><i class="fas fa-phone"></i> 94868 11714</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 5AM-9AM |  4PM-9PM  <br> Sun: Closed</p>
+                    </div>
+
+                    <div class="detail-actions">
+                        <button class="action-btn primary">Get Free Trial</button>
+                        <button class="action-btn secondary">Virtual Tour</button>
+                    </div>
+                </div>
+
+                <div class="detail-visuals">
+                    <div class="detail-images">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Eastpoint Gym" class="detail-img main">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Olympic" class="detail-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Recovery" class="detail-img">
+                    </div>
+                    <div class="detail-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28497.786758571805!2d77.45654397483322!3d9.387572500000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06eb66623d2b71%3A0x6a261f19da7dda97!2sXtreme%20Body%20Health%20%26%20Fitness!5e1!3m2!1sen!2sin!4v1763523321979!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Life?</h2>
+            <p>Join PowerFit today and experience the difference. Get a free 7-day trial pass to any of our three
+                premium locations.</p>
+            <div class="cta-buttons">
+                <button class="cta-button primary">
+                    <i class="fas fa-check-circle"></i>
+                    Get Free Trial Pass
+                </button>
+                <button class="cta-button secondary">
+                    <i class="fas fa-info-circle"></i>
+                    View Membership Plans
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>PowerFit Gym</h3>
+                <p>Transforming lives through fitness with three premium locations across the city. Join our community
+                    and discover your strongest self.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our Locations</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Downtown: 123 Main Street</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Westside: 456 West Avenue</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Eastpoint: 789 East Point Drive</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#branches">Our Branches</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> General: (555) 100-0000</p>
+                <p><i class="fas fa-envelope"></i> info@powerfitgym.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 5AM-11PM</p>
+                <p><i class="fas fa-clock"></i> Sat-Sun: 6AM-10PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PowerFit Gym. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            body.classList.toggle('light-theme');
+            body.classList.toggle('dark-theme');
+
+            if (body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Close mobile menu if open
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all detail cards
+        document.querySelectorAll('.detail-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>

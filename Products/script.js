@@ -129,15 +129,38 @@ const products = [
     }
 ];
 
-// Cart functionality
+// Cart functionality with localStorage
 let cart = [];
 let currentCategory = 'all';
-let productQuantities = {}; // Track quantities for each product
+let productQuantities = {};
 
 // Initialize quantities for all products
 products.forEach(product => {
     productQuantities[product.id] = 1;
 });
+
+// Load cart from localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('xtremeBodyCart');
+    if (savedCart) {
+        try {
+            cart = JSON.parse(savedCart);
+            updateCartUI();
+        } catch (e) {
+            console.error('Error loading cart:', e);
+            cart = [];
+        }
+    }
+}
+
+// Save cart to localStorage
+function saveCart() {
+    try {
+        localStorage.setItem('xtremeBodyCart', JSON.stringify(cart));
+    } catch (e) {
+        console.error('Error saving cart:', e);
+    }
+}
 
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
@@ -147,10 +170,8 @@ const html = document.documentElement;
 themeToggle.addEventListener('click', () => {
     const currentTheme = html.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
     html.setAttribute('data-theme', newTheme);
     themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-
     localStorage.setItem('theme', newTheme);
 });
 
@@ -169,7 +190,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
-// Generate variant options based on category
+// Generate variant options
 function generateVariantOptions(product) {
     return product.variants.map((variant, index) => {
         const isColor = variant.color;
@@ -177,18 +198,18 @@ function generateVariantOptions(product) {
         const optionStyle = isColor ? `background-color: ${variant.color}` : `background: var(--primary-red)`;
 
         return `
-                    <label for="${product.id}-variant-${index}">
-                        <div class="name">${variant.name}</div>
-                        <input type="radio" name="variant-${product.id}" id="${product.id}-variant-${index}" value="${index}" ${index === 0 ? 'checked' : ''}>
-                        <div class="option ${optionClass}" style="${optionStyle}">
-                            ${isColor ? '' : variant.name}
-                        </div>
-                    </label>
-                `;
+            <label for="${product.id}-variant-${index}">
+                <div class="name">${variant.name}</div>
+                <input type="radio" name="variant-${product.id}" id="${product.id}-variant-${index}" value="${index}" ${index === 0 ? 'checked' : ''}>
+                <div class="option ${optionClass}" style="${optionStyle}">
+                    ${isColor ? '' : variant.name}
+                </div>
+            </label>
+        `;
     }).join('');
 }
 
-// Quantity control functions
+// Update quantity
 function updateQuantity(productId, change) {
     const currentQty = productQuantities[productId] || 1;
     const newQty = Math.max(1, currentQty + change);
@@ -200,60 +221,61 @@ function updateQuantity(productId, change) {
     }
 }
 
+// Navigate to product detail
+function goToProductDetail(productId) {
+    window.location.href = `product-detail.html?id=${productId}`;
+}
+
 // Render products
 function renderProducts() {
     const grid = document.getElementById('productsGrid');
     const filteredProducts = currentCategory === 'all' ? products : products.filter(p => p.category === currentCategory);
 
     grid.innerHTML = filteredProducts.map(product => `
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="product-card-container">
-                        <div class="product-card" id="card-${product.id}">
-                            <div class="basicInfo">
-                                <div class="title">
-                                    <div class="category">${product.category.toUpperCase()}</div>
-                                    <div class="name">${product.name}</div>
-                                    <div class="info">XTREME BODY Premium</div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="product-card-container">
+                <div class="product-card" id="card-${product.id}">
+                    <div class="basicInfo">
+                        <div class="title">
+                            <div class="category">${product.category.toUpperCase()}</div>
+                            <div class="name">${product.name}</div>
+                            <div class="info">XTREME BODY Premium</div>
+                        </div>
+                        <div class="product-images">
+                            ${product.images.map((img, index) => `
+                                <div class="item">
+                                    <input type="radio" name="image-${product.id}" class="img-input" id="${product.id}-img-${index}" ${index === 0 ? 'checked' : ''}>
+                                    <img src="${img}" alt="${product.name}">
                                 </div>
-                                <div class="product-images">
-                                    ${product.images.map((img, index) => `
-                                        <div class="item">
-                                            <input type="radio" name="image-${product.id}" class="img-input" id="${product.id}-img-${index}" ${index === 0 ? 'checked' : ''}>
-                                            <img src="${img}" alt="${product.name}">
-                                        </div>
-                                    `).join('')}
-                                </div>
-                                <div class="product-options">
-                                    <div class="variants">
-                                        ${generateVariantOptions(product)}
-                                    </div>
-                                    <div class="quantity-section">
-                                        <span style="font-size: 12px; font-weight: 600; color: var(--dark);">Quantity:</span>
-                                        <div class="quantity-controls">
-                                            <button type="button" class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
-                                            <span class="quantity-display" id="qty-${product.id}">${productQuantities[product.id] || 1}</span>
-                                            <button type="button" class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="addCard">
-                                    <i class="fa-solid fa-cart-shopping" onclick="addToCart(${product.id})"></i>
-                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="product-options">
+                            <div class="variants">
+                                ${generateVariantOptions(product)}
                             </div>
-                            <div class="mores">
-                                <div class="stars">
-                                    <i class="fa-solid fa-star text-yellow"></i>
-                                    <i class="fa-solid fa-star text-yellow"></i>
-                                    <i class="fa-solid fa-star text-yellow"></i>
-                                    <i class="fa-solid fa-star text-yellow"></i>
-                                    <i class="fa-regular fa-star"></i>
+                            <div class="quantity-section">
+                                <span style="font-size: 12px; font-weight: 600; color: var(--dark);">Quantity:</span>
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity(${product.id}, -1)">-</button>
+                                    <span class="quantity-display" id="qty-${product.id}">${productQuantities[product.id] || 1}</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity(${product.id}, 1)">+</button>
                                 </div>
-                                <div class="price" id="price-${product.id}">₹${product.price}</div>
                             </div>
                         </div>
+                        <div class="addCard">
+                            <i class="fa-solid fa-cart-shopping" onclick="event.stopPropagation(); addToCart(${product.id})"></i>
+                        </div>
+                    </div>
+                    <div class="mores">
+                        <button class="see-more-btn" onclick="goToProductDetail(${product.id})">
+                            <i class="fas fa-eye me-2"></i>See More
+                        </button>
+                        <div class="price" id="price-${product.id}">₹${product.price}</div>
                     </div>
                 </div>
-            `).join('');
+            </div>
+        </div>
+    `).join('');
 
     // Add variant selection functionality
     filteredProducts.forEach(product => {
@@ -270,12 +292,11 @@ function renderProducts() {
     });
 }
 
-// Add to cart with animation
+// Add to cart
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const card = document.getElementById(`card-${productId}`);
 
-    // Get selected variant
     const selectedVariantInput = document.querySelector(`input[name="variant-${productId}"]:checked`);
     let variantIndex = 0;
     if (selectedVariantInput) {
@@ -290,7 +311,7 @@ function addToCart(productId) {
         selectedVariant: selectedVariant,
         finalPrice: selectedVariant.price,
         quantity: quantity,
-        cartId: `${productId}-${selectedVariant.value}` // Unique cart ID for variants
+        cartId: `${productId}-${selectedVariant.value}`
     };
 
     const existingItemIndex = cart.findIndex(item => item.cartId === cartItem.cartId);
@@ -301,16 +322,17 @@ function addToCart(productId) {
         cart.push(cartItem);
     }
 
+    // Save to localStorage
+    saveCart();
+
     // Card animation
     card.classList.add('card-added');
 
-    // Show success message
     const successMessage = document.createElement('div');
     successMessage.className = 'success-message';
     successMessage.textContent = 'Added to Cart!';
     card.appendChild(successMessage);
 
-    // Remove animation and message after delay
     setTimeout(() => {
         card.classList.remove('card-added');
         if (successMessage.parentNode) {
@@ -318,7 +340,6 @@ function addToCart(productId) {
         }
     }, 1500);
 
-    // Reset quantity to 1 after adding to cart
     productQuantities[productId] = 1;
     const qtyDisplay = document.getElementById(`qty-${productId}`);
     if (qtyDisplay) {
@@ -339,7 +360,6 @@ function updateCartUI() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.finalPrice * item.quantity), 0);
 
-    // Update cart badge
     if (totalItems > 0) {
         cartCount.textContent = totalItems;
         cartCount.style.display = 'flex';
@@ -347,39 +367,38 @@ function updateCartUI() {
         cartCount.style.display = 'none';
     }
 
-    // Update cart content
     if (cart.length === 0) {
         cartItems.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fas fa-shopping-cart" style="font-size: 3rem; opacity: 0.3; margin-bottom: 20px;"></i>
-                        <p>Your cart is empty</p>
-                        <p>Add some products to get started!</p>
-                    </div>
-                `;
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart" style="font-size: 3rem; opacity: 0.3; margin-bottom: 20px;"></i>
+                <p>Your cart is empty</p>
+                <p>Add some products to get started!</p>
+            </div>
+        `;
         cartTotalSection.style.display = 'none';
         checkoutBtn.disabled = true;
     } else {
         cartItems.innerHTML = cart.map((item, index) => `
-                    <div class="cart-item">
-                        <div class="cart-item-header">
-                            <div class="cart-item-info">
-                                <h6>${item.name}</h6>
-                                <div class="cart-item-variant">${item.selectedVariant.name} - ₹${item.finalPrice} each</div>
-                            </div>
-                            <button class="cart-remove-btn" onclick="removeFromCart(${index})">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                        <div class="cart-item-controls">
-                            <div class="cart-quantity-controls">
-                                <button class="cart-quantity-btn" onclick="updateCartQuantity(${index}, -1)">-</button>
-                                <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
-                                <button class="cart-quantity-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
-                            </div>
-                            <div class="cart-item-price">₹${item.finalPrice * item.quantity}</div>
-                        </div>
+            <div class="cart-item">
+                <div class="cart-item-header">
+                    <div class="cart-item-info">
+                        <h6>${item.name}</h6>
+                        <div class="cart-item-variant">${item.selectedVariant.name} - ₹${item.finalPrice} each</div>
                     </div>
-                `).join('');
+                    <button class="cart-remove-btn" onclick="removeFromCart(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="cart-item-controls">
+                    <div class="cart-quantity-controls">
+                        <button class="cart-quantity-btn" onclick="updateCartQuantity(${index}, -1)">-</button>
+                        <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
+                        <button class="cart-quantity-btn" onclick="updateCartQuantity(${index}, 1)">+</button>
+                    </div>
+                    <div class="cart-item-price">₹${item.finalPrice * item.quantity}</div>
+                </div>
+            </div>
+        `).join('');
 
         cartTotal.textContent = totalPrice;
         cartTotalSection.style.display = 'block';
@@ -391,6 +410,7 @@ function updateCartUI() {
 function updateCartQuantity(index, change) {
     if (cart[index]) {
         cart[index].quantity = Math.max(1, cart[index].quantity + change);
+        saveCart();
         updateCartUI();
     }
 }
@@ -398,6 +418,7 @@ function updateCartQuantity(index, change) {
 // Remove from cart
 function removeFromCart(index) {
     cart.splice(index, 1);
+    saveCart();
     updateCartUI();
 }
 
@@ -430,7 +451,6 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
         return;
     }
 
-    // Generate WhatsApp message
     const orderDetails = cart.map(item =>
         `${item.quantity}× ${item.name} (${item.selectedVariant.name}) - ₹${item.finalPrice * item.quantity}`
     ).join('%0A');
@@ -438,7 +458,6 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
     const total = cart.reduce((sum, item) => sum + (item.finalPrice * item.quantity), 0);
     const message = `Hi XTREME BODY! 💪%0A%0AI want to place an order:%0A%0A${orderDetails}%0A%0A*Total: ₹${total}*%0A%0APlease confirm my order. Thank you!`;
 
-    // WhatsApp number as requested
     const whatsappNumber = "911234567890";
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
@@ -447,9 +466,9 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
+    loadCart();
     renderProducts();
 
-    // Add entrance animations
     setTimeout(() => {
         document.querySelectorAll('.product-card').forEach((card, index) => {
             card.style.opacity = '0';
@@ -471,20 +490,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -496,10 +501,3 @@ window.addEventListener('scroll', () => {
         navbar.style.backdropFilter = 'blur(10px)';
     }
 });
-
-
-
-
-
-
-
