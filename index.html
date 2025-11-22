@@ -58,98 +58,99 @@
         </div>
     </nav>
 
-   <section class="hero">
-       <div class="carousel-container">
-        <!-- Slide 1 - Left Content -->
-        <div class="carousel-slide slide-1 active">
-            <div class="slide-content">
-                <div class="top-accent"></div>
-                <div class="text-line line-top">
-                    <span>SHAPE YOUR</span>
+    <section class="hero">
+        <div class="carousel-container">
+            <!-- Slide 1 - Left Content -->
+            <div class="carousel-slide slide-1 active">
+                <div class="slide-content">
+                    <div class="top-accent"></div>
+                    <div class="text-line line-top">
+                        <span>SHAPE YOUR</span>
+                    </div>
+                    <div class="text-line line-middle">
+                        <span>PERFECT</span>
+                    </div>
+                    <div class="text-line line-bottom">
+                        <span>BODY</span>
+                    </div>
+                    <div class="bottom-accent"></div>
+                    <div class="cta-section">
+                        <p class="subtext">START TODAY</p>
+                        <a href="tel:+918812345678" class="cta-button">
+                            <span>GET STARTED</span>
+                        </a>
+                        <span class="phone-number">+91 1234567890</span>
+                    </div>
                 </div>
-                <div class="text-line line-middle">
-                    <span>PERFECT</span>
+            </div>
+
+            <!-- Slide 2 - Right Content -->
+            <div class="carousel-slide slide-2">
+                <div class="slide-content">
+                    <div class="top-accent"></div>
+                    <div class="text-line line-top">
+                        <span>FORGE YOUR</span>
+                    </div>
+                    <div class="text-line line-middle">
+                        <span>EXTREME</span>
+                    </div>
+                    <div class="text-line line-bottom">
+                        <span>PHYSIQUE</span>
+                    </div>
+                    <div class="bottom-accent"></div>
+                    <div class="cta-section">
+                        <p class="subtext">TRANSFORM TODAY</p>
+                        <a href="tel:+918812345678" class="cta-button">
+                            <span>JOIN NOW</span>
+                        </a>
+                        <span class="phone-number">+91 1234567890</span>
+                    </div>
                 </div>
-                <div class="text-line line-bottom">
-                    <span>BODY</span>
+            </div>
+
+            <!-- Slide 3 - Left Content -->
+            <div class="carousel-slide slide-3">
+                <div class="slide-content">
+                    <div class="top-accent"></div>
+                    <div class="text-line line-top">
+                        <span>UNLEASH YOUR</span>
+                    </div>
+                    <div class="text-line line-middle">
+                        <span>ULTIMATE</span>
+                    </div>
+                    <div class="text-line line-bottom">
+                        <span>STRENGTH</span>
+                    </div>
+                    <div class="bottom-accent"></div>
+                    <div class="cta-section">
+                        <p class="subtext">BEGIN YOUR JOURNEY</p>
+                        <a href="tel:+918812345678" class="cta-button">
+                            <span>SIGN UP</span>
+                        </a>
+                        <span class="phone-number">+91 1234567890</span>
+                    </div>
                 </div>
-                <div class="bottom-accent"></div>
-                <div class="cta-section">
-                    <p class="subtext">START TODAY</p>
-                    <a href="tel:+918812345678" class="cta-button">
-                        <span>GET STARTED</span>
-                    </a>
-                    <span class="phone-number">+91 1234567890</span>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow arrow-left" onclick="changeSlide(-1)">‹</button>
+            <button class="carousel-arrow arrow-right" onclick="changeSlide(1)">›</button>
+
+            <!-- Navigation Dots -->
+            <div class="carousel-dots">
+                <span class="hero_dot active" onclick="goToSlide(0)"></span>
+                <span class="hero_dot" onclick="goToSlide(1)"></span>
+                <span class="hero_dot" onclick="goToSlide(2)"></span>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator"
+                onclick="document.querySelector('#next-section')?.scrollIntoView({behavior: 'smooth'})">
+                <div class="scroll-circle">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </div>
-
-        <!-- Slide 2 - Right Content -->
-        <div class="carousel-slide slide-2">
-            <div class="slide-content">
-                <div class="top-accent"></div>
-                <div class="text-line line-top">
-                    <span>FORGE YOUR</span>
-                </div>
-                <div class="text-line line-middle">
-                    <span>EXTREME</span>
-                </div>
-                <div class="text-line line-bottom">
-                    <span>PHYSIQUE</span>
-                </div>
-                <div class="bottom-accent"></div>
-                <div class="cta-section">
-                    <p class="subtext">TRANSFORM TODAY</p>
-                    <a href="tel:+918812345678" class="cta-button">
-                        <span>JOIN NOW</span>
-                    </a>
-                    <span class="phone-number">+91 1234567890</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3 - Left Content -->
-        <div class="carousel-slide slide-3">
-            <div class="slide-content">
-                <div class="top-accent"></div>
-                <div class="text-line line-top">
-                    <span>UNLEASH YOUR</span>
-                </div>
-                <div class="text-line line-middle">
-                    <span>ULTIMATE</span>
-                </div>
-                <div class="text-line line-bottom">
-                    <span>STRENGTH</span>
-                </div>
-                <div class="bottom-accent"></div>
-                <div class="cta-section">
-                    <p class="subtext">BEGIN YOUR JOURNEY</p>
-                    <a href="tel:+918812345678" class="cta-button">
-                        <span>SIGN UP</span>
-                    </a>
-                    <span class="phone-number">+91 1234567890</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="carousel-arrow arrow-left" onclick="changeSlide(-1)">‹</button>
-        <button class="carousel-arrow arrow-right" onclick="changeSlide(1)">›</button>
-
-        <!-- Navigation Dots -->
-        <div class="carousel-dots">
-            <span class="hero_dot active" onclick="goToSlide(0)"></span>
-            <span class="hero_dot" onclick="goToSlide(1)"></span>
-            <span class="hero_dot" onclick="goToSlide(2)"></span>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" onclick="document.querySelector('#next-section')?.scrollIntoView({behavior: 'smooth'})">
-            <div class="scroll-circle">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </div>
     </section>
 
     <!-- About Section -->
@@ -376,7 +377,7 @@
         </div>
     </div>
 
-<!-- Testimonials Section -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="section">
         <div class="container">
             <h2 class="section-title">Hear from the Extremers!</h2>
@@ -384,7 +385,7 @@
             <!-- Slider Container -->
             <div class="slider-container">
                 <div class="slider-wrapper" id="sliderWrapper">
-                    
+
                     <!-- Card 1: Sarah Johnson -->
                     <div class="slider-card">
                         <div class="testimonial-slide">
@@ -393,20 +394,24 @@
                                     <!-- Video Box -->
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="Images/intro-movie-1080.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video src="Images/intro-movie-1080.mp4" type="video/mp4" autoplay loop
+                                                muted playsinline></video>
                                         </div>
                                     </div>
                                     <!-- Content Box -->
                                     <div class="box">
                                         <div class="content">
                                             <h2>Sarah Johnson <br><span>Professional Bodybuilder</span></h2>
-                                            <p>This gym completely transformed my fitness journey. The trainers are incredibly knowledgeable and supportive, helping me achieve goals I never thought possible. The community here is amazing!</p>
+                                            <p>This gym completely transformed my fitness journey. The trainers are
+                                                incredibly knowledgeable and supportive, helping me achieve goals I
+                                                never thought possible. The community here is amazing!</p>
                                         </div>
                                     </div>
                                     <!-- Profile Circle -->
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Sarah Johnson">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+                                                alt="Sarah Johnson">
                                         </div>
                                     </div>
                                 </div>
@@ -421,18 +426,22 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="Images/video (1).mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video src="Images/video (1).mp4" type="video/mp4" autoplay loop muted
+                                                playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Mike Rodriguez <br><span>Fitness Enthusiast</span></h2>
-                                            <p>I've been a member for two years now, and the results speak for themselves. The equipment is top-notch, and the atmosphere is always motivating. Best investment I've made for my health!</p>
+                                            <p>I've been a member for two years now, and the results speak for
+                                                themselves. The equipment is top-notch, and the atmosphere is always
+                                                motivating. Best investment I've made for my health!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Mike Rodriguez">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                                                alt="Mike Rodriguez">
                                         </div>
                                     </div>
                                 </div>
@@ -447,18 +456,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Emily Chen <br><span>Marathon Runner</span></h2>
-                                            <p>The personalized training programs here are exceptional. My coach helped me improve my marathon time significantly. The facility is always clean and well-maintained too!</p>
+                                            <p>The personalized training programs here are exceptional. My coach helped
+                                                me improve my marathon time significantly. The facility is always clean
+                                                and well-maintained too!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Emily Chen">
+                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+                                                alt="Emily Chen">
                                         </div>
                                     </div>
                                 </div>
@@ -473,18 +487,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>David Thompson <br><span>Personal Trainer</span></h2>
-                                            <p>Working here has been incredible. The management truly cares about both staff and members. The facility is equipped with the latest technology and the community spirit is unmatched!</p>
+                                            <p>Working here has been incredible. The management truly cares about both
+                                                staff and members. The facility is equipped with the latest technology
+                                                and the community spirit is unmatched!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="David Thompson">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+                                                alt="David Thompson">
                                         </div>
                                     </div>
                                 </div>
@@ -499,18 +518,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Lisa Anderson <br><span>Yoga Instructor</span></h2>
-                                            <p>The variety of classes and flexibility in scheduling is amazing. I've been able to explore different fitness disciplines and found my passion for yoga. The instructors are world-class!</p>
+                                            <p>The variety of classes and flexibility in scheduling is amazing. I've
+                                                been able to explore different fitness disciplines and found my passion
+                                                for yoga. The instructors are world-class!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face" alt="Lisa Anderson">
+                                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face"
+                                                alt="Lisa Anderson">
                                         </div>
                                     </div>
                                 </div>
@@ -525,18 +549,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Alex Foster <br><span>Crossfit Athlete</span></h2>
-                                            <p>The intensity and variety of workouts here keep me challenged every day. The coaching staff pushes you to your limits while ensuring proper form and safety. Couldn't ask for more!</p>
+                                            <p>The intensity and variety of workouts here keep me challenged every day.
+                                                The coaching staff pushes you to your limits while ensuring proper form
+                                                and safety. Couldn't ask for more!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face" alt="Alex Foster">
+                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+                                                alt="Alex Foster">
                                         </div>
                                     </div>
                                 </div>
@@ -551,18 +580,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Jessica Martinez <br><span>Swimming Coach</span></h2>
-                                            <p>The aquatic facilities are outstanding. I've trained Olympic hopefuls here and the pool conditions are always perfect. The support staff is incredibly professional!</p>
+                                            <p>The aquatic facilities are outstanding. I've trained Olympic hopefuls
+                                                here and the pool conditions are always perfect. The support staff is
+                                                incredibly professional!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face" alt="Jessica Martinez">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face"
+                                                alt="Jessica Martinez">
                                         </div>
                                     </div>
                                 </div>
@@ -577,18 +611,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Robert Kim <br><span>Powerlifter</span></h2>
-                                            <p>The strength training equipment here is second to none. I've hit personal records I never thought possible. The coaching expertise in Olympic lifting is phenomenal!</p>
+                                            <p>The strength training equipment here is second to none. I've hit personal
+                                                records I never thought possible. The coaching expertise in Olympic
+                                                lifting is phenomenal!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face" alt="Robert Kim">
+                                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
+                                                alt="Robert Kim">
                                         </div>
                                     </div>
                                 </div>
@@ -603,18 +642,23 @@
                                 <div class="card">
                                     <div class="box">
                                         <div class="imgbx">
-                                            <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+                                            <video
+                                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                                                type="video/mp4" autoplay loop muted playsinline></video>
                                         </div>
                                     </div>
                                     <div class="box">
                                         <div class="content">
                                             <h2>Amanda Lee <br><span>Nutrition Expert</span></h2>
-                                            <p>The holistic approach to fitness here is remarkable. Combining training with proper nutrition guidance has transformed countless member journeys. Truly a complete wellness center!</p>
+                                            <p>The holistic approach to fitness here is remarkable. Combining training
+                                                with proper nutrition guidance has transformed countless member
+                                                journeys. Truly a complete wellness center!</p>
                                         </div>
                                     </div>
                                     <div class="circle">
                                         <div class="imgbx">
-                                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face" alt="Amanda Lee">
+                                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&crop=face"
+                                                alt="Amanda Lee">
                                         </div>
                                     </div>
                                 </div>
@@ -628,7 +672,8 @@
             <!-- Slider Controls (Navigation Buttons and Dots) -->
             <div class="slider-controls">
                 <div class="nav-arrows">
-                    <button class="nav-btn" id="prevBtn" onclick="prevSlide()" aria-label="Previous testimonials">‹</button>
+                    <button class="nav-btn" id="prevBtn" onclick="prevSlide()"
+                        aria-label="Previous testimonials">‹</button>
                 </div>
                 <div class="slider-dots" id="dotsContainer"></div>
                 <button class="nav-btn" id="nextBtn" onclick="nextSlide()" aria-label="Next testimonials">›</button>
@@ -637,7 +682,7 @@
     </section>
 
     <!-- Membership section -->
-    <section id="memberships" class="section" >
+    <section id="memberships" class="section">
         <div class="container">
             <h2 class="section-title">Choose Your Plan</h2>
             <div class="billing-toggle">
@@ -645,7 +690,7 @@
                 <button class="billing-option" onclick="setBilling('half-yearly')">Half Yearly</button>
                 <button class="billing-option" onclick="setBilling('annual')">Annual</button>
             </div>
-            
+
             <div class="pricing-grid">
                 <!-- Basic Plan -->
                 <div class="pricing-card basic" onclick="selectPlan(this)">
@@ -656,8 +701,10 @@
                         <h3 class="plan-name">Starter</h3>
                         <div class="price-container">
                             <div class="price-wrapper">
-                                <div class="old-price" data-monthly="" data-half-yearly="₹7600" data-annual="₹14400" style="display: none;"></div>
-                                <div class="plan-price" data-monthly="1200" data-half-yearly="6000" data-annual="12000">₹1200</div>
+                                <div class="old-price" data-monthly="" data-half-yearly="₹7600" data-annual="₹14400"
+                                    style="display: none;"></div>
+                                <div class="plan-price" data-monthly="1200" data-half-yearly="6000" data-annual="12000">
+                                    ₹1200</div>
                             </div>
                             <div class="plan-period">/month</div>
                             <div class="discount-badge" style="display: none;">Save 17%</div>
@@ -674,7 +721,7 @@
                         <button class="plan-button">Get Started</button>
                     </div>
                 </div>
-                
+
                 <!-- Premium Plan -->
                 <div class="pricing-card premium" onclick="selectPlan(this)">
                     <div class="card-header">
@@ -684,8 +731,10 @@
                         <h3 class="plan-name">Professional</h3>
                         <div class="price-container">
                             <div class="price-wrapper">
-                                <div class="old-price" data-monthly="" data-half-yearly="₹15000" data-annual="₹30000" style="display: none;"></div>
-                                <div class="plan-price" data-monthly="2500" data-half-yearly="12450" data-annual="25000">₹2500</div>
+                                <div class="old-price" data-monthly="" data-half-yearly="₹15000" data-annual="₹30000"
+                                    style="display: none;"></div>
+                                <div class="plan-price" data-monthly="2500" data-half-yearly="12450"
+                                    data-annual="25000">₹2500</div>
                             </div>
                             <div class="plan-period">/month</div>
                             <div class="discount-badge" style="display: none;">Save 17%</div>
@@ -702,7 +751,7 @@
                         <button class="plan-button">Choose Premium</button>
                     </div>
                 </div>
-                
+
                 <!-- Elite Plan -->
                 <!-- <div class="pricing-card elite" onclick="selectPlan(this)">
                     <div class="card-header">
@@ -730,7 +779,7 @@
                         <button class="plan-button">Go Elite</button>
                     </div>
                 </div> -->
-    
+
                 <!-- Student Plan -->
                 <div class="pricing-card student" onclick="selectPlan(this)">
                     <div class="card-header">
@@ -740,8 +789,10 @@
                         <h3 class="plan-name">Student</h3>
                         <div class="price-container">
                             <div class="price-wrapper">
-                                <div class="old-price" data-monthly="" data-half-yearly="₹7200" data-annual="₹14450">₹1200</div>
-                                <div class="plan-price" data-monthly="1000" data-half-yearly="4500" data-annual="9500">₹1000</div>
+                                <div class="old-price" data-monthly="" data-half-yearly="₹7200" data-annual="₹14450">
+                                    ₹1200</div>
+                                <div class="plan-price" data-monthly="1000" data-half-yearly="4500" data-annual="9500">
+                                    ₹1000</div>
                             </div>
                             <div class="plan-period">/month</div>
                             <div class="discount-badge">Student Discount 35%</div>
@@ -1122,7 +1173,8 @@
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt fa-2x text-danger mb-3"></i>
                         <h5>Visit Us</h5>
-                        <p>Rajapalayam: 123 Fitness Street<br>RR Nagar: 456 Wellness Avenue<br>RR Nagar: 456 Wellness Avenue</p>
+                        <p>Rajapalayam: 123 Fitness Street<br>RR Nagar: 456 Wellness Avenue<br>RR Nagar: 456 Wellness
+                            Avenue</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
@@ -1145,77 +1197,47 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="footer-logo">
-                        <img src="Images/XB PNG.png" alt="XTREME BODY">
-                    </div>
-                    <p>Transform your body and mind at XTREME BODY. Join our community of fitness enthusiasts and
-                        achieve your health goals with our expert guidance.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="Images/XTREME BODY PNG.png" alt="XTREME BODY">
                 </div>
-                <div class="col-lg-2 col-md-3 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="About/about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Products/products.html">Products</a>
-                    </li>
+                <p>Transforming lives through fitness with three premium locations across the city. Join our community
+                    and discover your strongest self.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Our Locations</h3>
+                <ul>
+                    <a href="#branch1" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> Rajapalayam : opposite Adhrith Hospital, behind Seeni Mahal, RJPM, TN</li></a>
+                    <a href="#branch2" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> RR Nagar : Ramaswamy Raja Nagar, Rajapalayam, Tamil Nadu 626108</li></a>
+                    <a href="#branch3" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> Dhalavaipuram : 9FQV+2VC Jayasakthi Nagar, Chettiarpatti, Dhalavaipuram, Tamil Nadu 626122 </li></a>
                 </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5>Opening Hours</h5>
-
-                    <!-- Branch 1 & 2 -->
-                    <div class="branch-title">Rajapalayam, RR Nagar & Dhalavaipuram</div>
-                    <div class="timing-item">
-                        <span class="timing-day">Monday - Saturday</span>
-                        <span class="timing-hours">5AM-9AM & 4PM-9PM</span>
-                    </div>
-                    <div class="timing-item">
-                        <span class="timing-day">Sunday</span>
-                        <span class="timing-hours">Closed</span>
-                    </div>
-
-                    <!-- Branch 1 Sunday Hours -->
-                    <div class="branch-title">Rajapalayam</div>
-                    <div class="timing-item">
-                        <span class="timing-day">Sunday</span>
-                        <span class="timing-hours">7AM-9AM & 7PM-9PM</span>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-3 col-md-5 mb-4">
-                    <h5>Contact Info</h5>
-                    <ul class="list-unstyled">
-                        <li class="text-white-50"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</li>
-                        <li class="text-white-50"><i class="fas fa-envelope me-2"></i>info@xtremebody.com</li>
-                        <li class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i>Rajapalayam & RR Nagar & Dhalavaipuram</li>
-                    </ul>
-                </div> -->
             </div>
-            <hr class="bg-white-50">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p class="text-white-50 mb-0">&copy; 2025 XTREME BODY. All rights reserved.</p>
-                </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#branches" class="footer-link">Our Branches</a></li>
+                    <li><a href="#services" class="footer-link">Services</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> General: +91 94868 11714</p>
+                <p><i class="fas fa-envelope"></i> info@xtremebody.in</p>
+                <!-- <p><i class="fas fa-clock"></i> Mon-Fri: 5AM-11PM</p>
+                <p><i class="fas fa-clock"></i> Sat-Sun: 6AM-10PM</p> -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <p class="text-white-50 mb-0">&copy; 2025 XTREME BODY. All rights reserved.</p>
         </div>
     </footer>
 

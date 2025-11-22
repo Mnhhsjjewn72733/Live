@@ -152,7 +152,23 @@ function saveCart() {
         console.error('Error saving cart:', e);
     }
 }
+// window.addEventListener('scroll', () => {
+//     const nav = document.querySelector('.navbar');
+//     if (window.scrollY > 100) {
+//         nav?.classList.add('scrolled');
+//     } else {
+//         nav?.classList.remove('scrolled');
+//     }
+// });
+document.addEventListener('click', function (event) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbar = document.querySelector('.navbar');
 
+    if (!navbar?.contains(event.target) && navbarCollapse?.classList.contains('show')) {
+        navbarToggler?.click();
+    }
+});
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
@@ -198,7 +214,7 @@ function initializePage() {
     variantOptions.innerHTML = currentProduct.variants.map((variant, index) => {
         const isColor = variant.color;
         const style = isColor ? `background-color: ${variant.color}; width: 50px; height: 50px; border-radius: 50%;` : '';
-        
+
         return `
             <button class="variant-option ${isColor ? 'color-variant' : ''} ${index === 0 ? 'active' : ''}" 
                     onclick="selectVariant(${index})" 
@@ -225,7 +241,7 @@ function selectVariant(index) {
     selectedVariantIndex = index;
     const variant = currentProduct.variants[index];
     document.getElementById('productPrice').textContent = `₹${variant.price}`;
-    
+
     document.querySelectorAll('.variant-option').forEach((btn, i) => {
         btn.classList.toggle('active', i === index);
     });
@@ -241,7 +257,7 @@ function updateQuantity(change) {
 function addToCart() {
     const btn = document.querySelector('.add-to-cart-btn');
     const variant = currentProduct.variants[selectedVariantIndex];
-    
+
     const cartItem = {
         ...currentProduct,
         selectedVariant: variant,
@@ -259,11 +275,11 @@ function addToCart() {
     }
 
     saveCart();
-    
+
     // Success animation
     btn.classList.add('success-added');
     btn.innerHTML = '<i class="fas fa-check me-2"></i>Added to Cart!';
-    
+
     setTimeout(() => {
         btn.classList.remove('success-added');
         btn.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';

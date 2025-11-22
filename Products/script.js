@@ -161,6 +161,16 @@ function saveCart() {
         console.error('Error saving cart:', e);
     }
 }
+// close hamburger while cliking outside the menu
+document.addEventListener('click', function (event) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbar = document.querySelector('.navbar');
+
+    if (!navbar?.contains(event.target) && navbarCollapse?.classList.contains('show')) {
+        navbarToggler?.click();
+    }
+});
 
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');

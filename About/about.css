@@ -98,15 +98,15 @@ body.light-theme .detail-contact p {
     color: var(--text-dark);
 }
 
-body.light-theme .footer {
+/* body.light-theme .footer {
     background: #f8f9fa;
     border-top: 1px solid rgba(220, 53, 69, 0.2);
-}
+} */
 
 body.light-theme .footer-section p,
 body.light-theme .footer-section li,
 body.light-theme .footer-section a {
-    color: var(--text-dark);
+    color: var(--text-light);
 }
 
 body.light-theme .cta-section {
@@ -147,10 +147,10 @@ body.light-theme .location-badge {
     border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
-body.light-theme .social-links a {
+/* body.light-theme .social-links a {
     background: rgba(220, 53, 69, 0.1);
     border: 1px solid rgba(220, 53, 69, 0.3);
-}
+} */
 
 body.light-theme .gym-element {
     color: var(--primary-red);
@@ -172,10 +172,10 @@ body.light-theme .gym-element {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-body.light-theme .navbar.scrolled {
+/* body.light-theme .navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.95) !important;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .navbar-brand img {
     height: 50px;
@@ -187,19 +187,19 @@ body.light-theme .navbar.scrolled {
 }
 
 .navbar-nav .nav-link {
-    color: var(--text-light) !important;
+    color: var(--text-light) ;
     font-weight: 500;
     margin: 0 10px;
     position: relative;
     transition: all 0.3s ease;
 }
 
-body.light-theme .navbar-nav .nav-link {
-    color: var(--text-dark) !important;
-}
+/* body.light-theme .navbar-nav .nav-link {
+    color: var(--text-dark) ;
+} */
 
 .navbar-nav .nav-link:hover {
-    color: var(--primary-red) !important;
+    color: var(--primary-red);
 }
 
 .navbar-nav .nav-link::after {
@@ -227,9 +227,9 @@ body.light-theme .navbar-nav .nav-link {
     transform-origin: center;
 }
 
-body.light-theme .hamburger {
+/* body.light-theme .hamburger {
     background-color: var(--text-dark);
-}
+} */
 
 .navbar-toggler {
     border: none;
@@ -263,9 +263,9 @@ body.light-theme .hamburger {
     cursor: pointer;
 }
 
-body.light-theme .theme-switcher {
+/* body.light-theme .theme-switcher {
     color: var(--text-dark);
-}
+} */
 
 .theme-switcher:hover {
     background-color: var(--primary-red);
@@ -1108,7 +1108,7 @@ body.light-theme .action-btn.secondary {
 
 /* Footer */
 .footer {
-    background: var(--dark);
+    background: var(--dark-bg);
     padding: 4rem 1.5rem 2rem;
     border-top: 1px solid rgba(220, 53, 69, 0.2);
 }
@@ -1120,7 +1120,12 @@ body.light-theme .action-btn.secondary {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
-
+.footer-logo img {
+    /* background-color: black; */
+    height: 60px;
+    transform: scale(1.2);
+    margin-bottom: 1rem;
+}
 .footer-section h3 {
     color: var(--primary-red);
     margin-bottom: 1.5rem;
@@ -1131,17 +1136,19 @@ body.light-theme .action-btn.secondary {
 .footer-section p,
 .footer-section li {
     margin-bottom: 1rem;
-    opacity: 0.7;
-    line-height: 1.8;
+    /* opacity: 0.7; */
+    /* line-height: 1.; */
     font-size: clamp(0.9rem, 2vw, 1rem);
 }
-
+/* .footer-section li{
+    text-align: left;
+} */
 .footer-section ul {
     list-style: none;
 }
 
 .footer-section a {
-    opacity: 0.7;
+    opacity: 0.9;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -1166,27 +1173,31 @@ body.light-theme .action-btn.secondary {
     height: 45px;
     background: rgba(220, 53, 69, 0.1);
     color: var(--primary-red);
-    border-radius: 12px;
+    border-radius: 50%;
     transition: all 0.3s ease;
     border: 1px solid rgba(220, 53, 69, 0.3);
 }
-
 .social-links a:hover {
     transform: translateY(-5px);
     background: var(--primary-red);
     color: white;
     box-shadow: 0 10px 25px rgba(220, 53, 69, 0.3);
 }
-
+.footer-loc{
+    color: var(--text-light);
+}
+.footer-link{
+    color: white;
+}
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(220, 53, 69, 0.1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(220, 53, 69, 0.1);
     opacity: 0.6;
     font-size: clamp(0.85rem, 2vw, 1rem);
 }
-
 @media (max-width: 768px) {
     .footer-container {
         text-align: center;

@@ -374,7 +374,9 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>PowerFit Gym</h3>
+                <div class="footer-logo">
+                    <img src="assets/XTREME BODY PNG.png" alt="XTREME BODY">
+                </div>
                 <p>Transforming lives through fitness with three premium locations across the city. Join our community
                     and discover your strongest self.</p>
                 <div class="social-links">
@@ -387,122 +389,35 @@
             <div class="footer-section">
                 <h3>Our Locations</h3>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Downtown: 123 Main Street</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Westside: 456 West Avenue</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Eastpoint: 789 East Point Drive</li>
+                    <a href="#branch1" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> Rajapalayam : opposite Adhrith Hospital, behind Seeni Mahal, RJPM, TN</li></a>
+                    <a href="#branch2" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> RR Nagar : Ramaswamy Raja Nagar, Rajapalayam, Tamil Nadu 626108</li></a>
+                    <a href="#branch3" class="footer-loc"><li><i class="fas fa-map-marker-alt"></i> Dhalavaipuram : 9FQV+2VC Jayasakthi Nagar, Chettiarpatti, Dhalavaipuram, Tamil Nadu 626122 </li></a>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#branches">Our Branches</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="footer-links">
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#branches" class="footer-link">Our Branches</a></li>
+                    <li><a href="#services" class="footer-link">Services</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p><i class="fas fa-phone"></i> General: (555) 100-0000</p>
-                <p><i class="fas fa-envelope"></i> info@powerfitgym.com</p>
-                <p><i class="fas fa-clock"></i> Mon-Fri: 5AM-11PM</p>
-                <p><i class="fas fa-clock"></i> Sat-Sun: 6AM-10PM</p>
+                <p><i class="fas fa-phone"></i> General: +91 94868 11714</p>
+                <p><i class="fas fa-envelope"></i> info@xtremebody.in</p>
+                <!-- <p><i class="fas fa-clock"></i> Mon-Fri: 5AM-11PM</p>
+                <p><i class="fas fa-clock"></i> Sat-Sun: 6AM-10PM</p> -->
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 PowerFit Gym. All rights reserved. | Privacy Policy | Terms of Service</p>
+           <p class="text-white-50 mb-0">&copy; 2025 XTREME BODY. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Theme Toggle Function
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-
-            body.classList.toggle('light-theme');
-            body.classList.toggle('dark-theme');
-
-            if (body.classList.contains('light-theme')) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Load saved theme on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-
-            if (savedTheme === 'light') {
-                body.classList.remove('dark-theme');
-                body.classList.add('light-theme');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
-                    // Close mobile menu if open
-                    const navbarCollapse = document.getElementById('navbarNav');
-                    if (navbarCollapse.classList.contains('show')) {
-                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                        bsCollapse.hide();
-                    }
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all detail cards
-        document.querySelectorAll('.detail-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(card);
-        });
-    </script>
+    <script src="about.js"></script>
 </body>
 
 </html>
