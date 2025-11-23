@@ -5,7 +5,7 @@ const products = [
         category: "protein",
         price: 2500,
         images: [
-            "Images/download__5_-removebg-preview.png",
+            "Images/Isolate Whey.png",
             "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -21,7 +21,7 @@ const products = [
         category: "protein",
         price: 2800,
         images: [
-            "Images/images-removebg-preview.png",
+            "Images/casine protein.png",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -53,7 +53,7 @@ const products = [
         category: "accessories",
         price: 500,
         images: [
-            "https://images.unsplash.com/photo-1566218917207-a5e0e80f5aa5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            "Images/weigted_plates.png",
             "https://images.unsplash.com/photo-1583473848882-f9a9873d0db0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -69,7 +69,7 @@ const products = [
         category: "clothing",
         price: 1200,
         images: [
-            "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            "Images/t_shirt.png",
             "https://images.unsplash.com/photo-1544966503-7cc5ac882d5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -85,7 +85,7 @@ const products = [
         category: "clothing",
         price: 900,
         images: [
-            "https://images.unsplash.com/photo-1506629905607-45c5a2c0e0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            "Images/Shorts.png",
             "https://images.unsplash.com/photo-1544966503-7cc5ac882d5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -101,7 +101,7 @@ const products = [
         category: "supplements",
         price: 1800,
         images: [
-            "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            "Images/BCCA.png",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -117,7 +117,7 @@ const products = [
         category: "supplements",
         price: 2200,
         images: [
-            "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            "Images/Pre Workout.png",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
         ],
         variants: [
@@ -276,10 +276,13 @@ function renderProducts() {
                             <i class="fa-solid fa-cart-shopping" onclick="event.stopPropagation(); addToCart(${product.id})"></i>
                         </div>
                     </div>
-                    <div class="mores">
-                        <button class="see-more-btn" onclick="goToProductDetail(${product.id})">
-                            <i class="fas fa-eye me-2"></i>See More
-                        </button>
+                    <div class="mores"><div class="stars">
+                                    <i class="fa-solid fa-star text-yellow"></i>
+                                    <i class="fa-solid fa-star text-yellow"></i>
+                                    <i class="fa-solid fa-star text-yellow"></i>
+                                    <i class="fa-solid fa-star text-yellow"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
                         <div class="price" id="price-${product.id}">₹${product.price}</div>
                     </div>
                 </div>

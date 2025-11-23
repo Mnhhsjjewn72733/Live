@@ -189,19 +189,19 @@ body.dark-theme {
 
 /* Slide Backgrounds */
 .slide-1 {
-    background-image: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+    background-image: 
         url('https://maruthi.wpengine.com/wp-content/uploads/revslider/fitgym/slider1.jpg');
     justify-content: flex-start;
 }
 
 .slide-2 {
-    background-image: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+    background-image: 
         url('https://maruthi.wpengine.com/wp-content/uploads/revslider/fitgym/slider2.jpg');
     justify-content: flex-end;
 }
 
 .slide-3 {
-    background-image: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
+    background-image:
         url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1920');
     justify-content: flex-start;
 }

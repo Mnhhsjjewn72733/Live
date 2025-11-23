@@ -828,7 +828,12 @@ footer {
     padding: 60px 0 30px;
     margin-top: 80px;
 }
-
+.footer-logo img {
+    /* background-color: black; */
+    height: 60px;
+    /* transform: scale(1.2); */
+    margin-bottom: 1rem;
+}
 .footer-section h5 {
     color: var(--primary-red);
     font-weight: 600;
